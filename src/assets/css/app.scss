@@ -1,0 +1,11 @@
+// global Imports
+@import '@assets/css/helpers/all.scss';
+@import "@assets/css/generated/sprite-svg.scss";
+
+// import variables
+@import '@assets/css/variables.scss';
+@import '@assets/css/common.scss';
+@import '@assets/css/modificators.scss';
+
+// components scss
+@import '@assets/css/components/main.scss';

@@ -1,0 +1,115 @@
+.prices__head {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-bottom: 48px;
+}
+.prices__table {
+	display: table;
+	width: 100%;
+}
+.prices__row {
+	display: table-row;
+	border-radius: 12px;
+	cursor: pointer;
+	color: #11142D;
+	-webkit-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	&:not(.prices__row_head) {
+		&:hover {
+			background: none;
+			-webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+		}
+	}
+}
+.prices__cell {
+	display: table-cell;
+	vertical-align: middle;
+	height: 72px;
+	padding-left: 16px;
+	font-weight: 600;
+	&:nth-child(3) {
+		font-weight: 600;
+		color: #808191;
+	}
+	&:last-child {
+		padding-right: 16px;
+		border-radius: 0 12px 12px 0;
+	}
+}
+.prices__row_head {
+	.prices__cell {
+		height: 40px;
+		font-size: 10px;
+		font-weight: 600;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: #808191;
+		&:first-child {
+			border-radius: 8px 0 0 8px;
+		}
+		&:last-child {
+			border-radius: 0 8px 8px 0;
+		}
+	}
+}
+.prices__company {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-weight: 600;
+}
+.prices__logo {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	width: 32px;
+	height: 32px;
+	margin-right: 16px;
+	img {
+		width: 100%;
+		min-height: 100%;
+		border-radius: 50%;
+	}
+}
+.prices__chart {
+	position: relative;
+	bottom: -4px;
+	width: 112px;
+	height: 30px;
+	.apexcharts-canvas {
+		svg {
+			overflow: visible;
+		}
+	}
+}
+.prices__btns {
+	margin-top: 40px;
+	text-align: center;
+}
+.dark {
+	.prices__row {
+		color: #ffffff;
+		&:not(.prices__row_head) {
+			&:hover {
+				background: #242731;
+			}
+		}
+	}
+}
+@include x {
+    .prices__cell:nth-child(3) {
+        display: none;
+    }
+}

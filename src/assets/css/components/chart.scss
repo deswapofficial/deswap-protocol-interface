@@ -1,0 +1,36 @@
+// Apex chart Scss
+
+.apexcharts-canvas {
+    // Tooltip Color
+    .apexcharts-tooltip {
+      color: $white !important;
+      &.apexcharts-theme-dark {
+        color: $white !important;
+      }
+    }
+    // Toolbar Download Option Color
+    .apexcharts-toolbar {
+      .apexcharts-menu {
+        .apexcharts-menu-item {
+          color: $white;
+        }
+      }
+    }
+  
+    // Text font family
+    .apexcharts-text,
+    .apexcharts-datalabel {
+      @fi
+    }
+  }
+  
+  // apex charts tooltip
+  .apexcharts-xaxistooltip {
+    color: $white !important;
+  }
+  
+  // Toolbar Z-index
+  .apexcharts-toolbar {
+    z-index: 10;
+  }
+  
