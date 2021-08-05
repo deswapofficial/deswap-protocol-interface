@@ -64,7 +64,7 @@ export default function HeaderConnect() {
             } else {
                 dispatch(
                     showToastMessage(
-                        `Dswap is only supported on Etherium Network. Please confirm you installed Metamask and selected Etherium Network`,
+                        `Please switch to Polygon Network.`,
                         "error",
                     ),
                 );
