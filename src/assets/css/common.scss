@@ -405,3 +405,9 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.coming-soon-badge{
+  background-color: $red-bg;
+  border-radius: 2rem;
+  line-height: .7rem;
+}

@@ -439,7 +439,7 @@
   }
 
 .header__body.header-body-2 {
-  max-width: 205px;
+  max-width: 450px;
   transform: none;
   left: auto;
   right: 0px;
@@ -454,4 +454,9 @@
 }
 .before-none:before{
   display:none !important;
+}
+
+.address{
+  color: #fff;
+  word-break: break-all;
 }

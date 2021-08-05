@@ -6,10 +6,15 @@ import DawTable from './DawTable'
 export default function Daw() {
     return (
         <div>
-            <Row>
-                <DawOverview />
-                <DawTable />
-            </Row>
+            {
+                true ? 
+                    <h1> Coming Soon...</h1>
+                :
+                    <Row>
+                        <DawOverview />
+                        <DawTable />
+                    </Row>
+            }
         </div>
     )
 }

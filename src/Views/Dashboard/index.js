@@ -6,10 +6,15 @@ import DashboardOverview from './DashboardOverview'
 export default function index() {
     return (
         <div>
-            <Row>
-                <DashboardOverview />
-                <DashboardDetails />
-            </Row>
+            {
+                true ? 
+                    <h1> Coming Soon...</h1>
+                :
+                    <Row>
+                        <DashboardOverview />
+                        <DashboardDetails />
+                    </Row>
+            }
         </div>
     )
 }

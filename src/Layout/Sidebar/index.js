@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {useLocation} from 'react-router-dom'
 import {handleMenuCollapsed} from '@redux/actions/layout';
 import Routes from '@layouts/navigation';
-
+import { Badge } from 'reactstrap';
 const SideBar = () => {
    const {menuCollapsed} = useSelector(state => state.layout)
    const dispatch = useDispatch()
@@ -17,12 +17,16 @@ const SideBar = () => {
    
    const getNavItems = () => {
       return Routes ? Routes.map(route => {
+         let title = route.title; 
+         let showBadge = title !== "Stake"
          return (
-         <a className={location.pathname === route.navLink ? "sidebar__item active" : "sidebar__item"} href={route.navLink}>
+         <a 
+            className={location.pathname === route.navLink ? "sidebar__item active w-100" : "sidebar__item w-100"} 
+            href={route.navLink} >
             <div className="sidebar__icon">
                <img src={route.icon} alt="home" />
             </div>
-            <div className="sidebar__text">{route.title}</div>
+            <div className="sidebar__text">{title} {showBadge && <Badge color="warning" className="coming-soon-badge" pill>Coming Soon</Badge>}</div>
          </a>)
       }) : null
    }

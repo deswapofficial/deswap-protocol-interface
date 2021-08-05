@@ -20,20 +20,27 @@ export default function Vault() {
     }, [selectedAddress])
     return (
         <>
-            <VaultHeader />
-            <Row className="match-height">
-                <VaultHistory />
-                <Col md="8">
-                    <Row>
-                        <Col md="12">
-                            <VaultStake />
-                        </Col>
-                        <Col md="12">
-                            <RewardPool />
+            {
+                true ? 
+                    <h1> Coming Soon...</h1>
+                : 
+                <>
+                    <VaultHeader />
+                    <Row className="match-height">
+                        <VaultHistory />
+                        <Col md="8">
+                            <Row>
+                                <Col md="12">
+                                    <VaultStake />
+                                </Col>
+                                <Col md="12">
+                                    <RewardPool />
+                                </Col>
+                            </Row>
                         </Col>
                     </Row>
-                </Col>
-            </Row>
+                </>
+            }
         </>
     )
 }
