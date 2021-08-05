@@ -20,7 +20,7 @@ export default function Stake() {
                             eventKey={1}
                             idx={idx}
                             setIdx={setIdx}
-                            tag={"Staking"}
+                            tag={"DAW 100 Days Staking"}
                             token="DAW"
                             tokenAddress="0x33e02851D5A084137Dc69b1a02ab2EeB7b7fE2A5"
                             stackTokenAddress="0x61327Be74D7a417F1772aB0DC3038437709617Ff"
@@ -29,7 +29,7 @@ export default function Stake() {
                             eventKey={2}
                             idx={idx}
                             setIdx={setIdx}
-                            tag={"Staking"}
+                            tag={"DAW 190 Days Staking"}
                             token="DAW"
                             tokenAddress="0x33e02851D5A084137Dc69b1a02ab2EeB7b7fE2A5"
                             stackTokenAddress="0xfdBCB36C5C2082bf26257ff38F8C95226E883fBE"
@@ -38,7 +38,7 @@ export default function Stake() {
                             eventKey={3}
                             idx={idx}
                             setIdx={setIdx}
-                            tag={"Staking"}
+                            tag={"DWAP 70 Days Staking"}
                             token="DWAP"
                             tokenAddress="0xAe07E7bF1FF10Da713AB5371A1B73869C8aA7A29"
                             stackTokenAddress="0x2E3df3d49112D8463F01FD79F9D0ca47Aa60f414"
@@ -47,7 +47,7 @@ export default function Stake() {
                             eventKey={4}
                             idx={idx}
                             setIdx={setIdx}
-                            tag={"Staking"}
+                            tag={"DWAP 100 Days Staking"}
                             token="DWAP"
                             tokenAddress="0xAe07E7bF1FF10Da713AB5371A1B73869C8aA7A29"
                             stackTokenAddress="0x9470a086964b970D2d3A2465166adeE822559A2A"
