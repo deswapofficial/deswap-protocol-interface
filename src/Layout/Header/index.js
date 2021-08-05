@@ -26,9 +26,9 @@ export default function Header() {
           <img src={logoPath} alt="" />
         </a>
         <div className="header__group">
-          <HeaderNotification />
-          <HeaderDownload />
-          <HeaderLanguge />
+//           <HeaderNotification />
+//           <HeaderDownload />
+//           <HeaderLanguge />
           <HeaderConnect />
         </div>
         <button className="header__toggle" onClick={handleToggle}>
