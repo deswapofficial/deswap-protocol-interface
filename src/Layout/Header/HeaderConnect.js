@@ -38,7 +38,7 @@ export default function HeaderConnect() {
                 : +window.ethereum.chainId;
         }
         if (netId) {
-            if (netId === 4 || netId === 137) {
+            if (netId === 137) {
                 if (netId === 137 && process.env.REACT_APP_ENV === "prod") {
                     dispatch(
                         showToastMessage(
