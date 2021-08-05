@@ -368,21 +368,14 @@ contract DAWstaking is Ownable {
     event RewardsTransferred(address holder, uint256 amount);
 
     // daw token contract address
-    address public constant tokenAddress =
-        0x86faa515F259C28239FFD65FE9d1a2960C6d1A17;
+    address public constant tokenAddress = 0x86faa515F259C28239FFD65FE9d1a2960C6d1A17;
+    
+    // dwap token contract address
+    address public constant rewardTokenAddress = 0x86faa515F259C28239FFD65FE9d1a2960C6d1A17;
 
-    // reward rate 72.00% per year
-    uint256 public constant rewardRate = 7200;
-    uint256 public constant rewardInterval = 86400 seconds;
-
-    // staking fee 1.50 percent
-    uint256 public constant stakingFeeRate = 150;
-
-    // unstaking fee 0.50 percent
-    uint256 public constant unstakingFeeRate = 50;
-
-    // unstaking possible after 72 hours
-    uint256 public constant cliffTime = 2 minutes;
+    // reward rate 120.0% per 4 months
+    uint256 public constant rewardRate = 12000;
+    uint256 public constant rewardInterval = 120 days;
 
     uint256 public totalClaimedRewards = 0;
 
@@ -442,15 +435,8 @@ contract DAWstaking is Ownable {
 
         updateAccount(msg.sender);
 
-        uint256 fee = amountToStake.mul(stakingFeeRate).div(1e4);
-        uint256 amountAfterFee = amountToStake.sub(fee);
-        require(
-            Token(tokenAddress).transfer(owner, fee),
-            "Could not transfer deposit fee."
-        );
-
         depositedTokens[msg.sender] = depositedTokens[msg.sender].add(
-            amountAfterFee
+            amountToStake
         );
 
         if (!holders.contains(msg.sender)) {
@@ -465,22 +451,10 @@ contract DAWstaking is Ownable {
             "Invalid amount to withdraw"
         );
 
-        require(
-            now.sub(stakingTime[msg.sender]) > cliffTime,
-            "You recently staked, please wait before withdrawing."
-        );
-
         updateAccount(msg.sender);
 
-        uint256 fee = amountToWithdraw.mul(unstakingFeeRate).div(1e4);
-        uint256 amountAfterFee = amountToWithdraw.sub(fee);
-
         require(
-            Token(tokenAddress).transfer(owner, fee),
-            "Could not transfer withdraw fee."
-        );
-        require(
-            Token(tokenAddress).transfer(msg.sender, amountAfterFee),
+            Token(tokenAddress).transfer(msg.sender, amountToWithdraw),
             "Could not transfer tokens."
         );
 
@@ -532,24 +506,14 @@ contract DAWstaking is Ownable {
         );
     }
 
-    uint256 private constant stakingAndDaoTokens = 5129e18;
-
-    function getStakingAndDaoAmount() public view returns (uint256) {
-        if (totalClaimedRewards >= stakingAndDaoTokens) {
-            return 0;
-        }
-        uint256 remaining = stakingAndDaoTokens.sub(totalClaimedRewards);
-        return remaining;
-    }
-
     // function to allow admin to claim *other* ERC20 tokens sent to this contract (by mistake)
-    // Admin cannot transfer out YF-DAI from this smart contract
+    // Admin cannot transfer out DAW from this smart contract
     function transferAnyERC20Tokens(
         address _tokenAddr,
         address _to,
         uint256 _amount
     ) public onlyOwner {
-        require(_tokenAddr != tokenAddress, "Cannot Transfer Out YF-DAI!");
+        require(_tokenAddr != tokenAddress, "Cannot Transfer Out DAW!");
         Token(_tokenAddr).transfer(_to, _amount);
     }
 }
