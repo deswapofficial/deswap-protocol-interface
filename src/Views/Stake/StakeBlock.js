@@ -288,7 +288,7 @@ const StakeBlock = (props) => {
                     <lable className="amount">{token}</lable>
                 </div>
                 <div className="staked-div col-12 col-sm-2">
-                    <span className="block-title">APR</span>
+                    <span className="block-title">APY</span>
                     <span className="token">
                         {setStakingAPR ? setStakingAPR : 0}%
                     </span>
