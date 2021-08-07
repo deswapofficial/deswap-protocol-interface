@@ -285,7 +285,7 @@ const StakeBlock = (props) => {
                     <span className="token">
                         {earnedToken ? earnedToken : 0}{" "}
                     </span>
-                    <lable className="amount">{token}</lable>
+                    <lable className="amount">DWAP</lable>
                 </div>
                 <div className="staked-div col-12 col-sm-2">
                     <span className="block-title">APY</span>
@@ -447,12 +447,12 @@ const StakeBlock = (props) => {
                                 {" "}
                                 <div className="staked-div">
                                     <span className="block-title">
-                                        {props.token} Earned
+                                        DWAP Earned
                                     </span>
                                     <span className="token">
                                         {pendingBalance ? pendingBalance : 0}
                                     </span>
-                                    <lable className="amount">{token}</lable>
+                                    <lable className="amount">DWAP</lable>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-6 pl-0">
                                     <button
