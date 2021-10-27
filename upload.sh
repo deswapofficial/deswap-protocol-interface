@@ -1,0 +1,1 @@
+scp -i ~/Desktop/server-keys/deswap.pem build.tar.gz ubuntu@3.14.178.159:/home/ubuntu/deswap-frontend/
